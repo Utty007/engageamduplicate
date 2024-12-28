@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'AlbertSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/AlbertSans/AlbertSans-Bold.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'AlbertSans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./fonts/AlbertSans/AlbertSans-ExtraBold.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'AlbertSans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/AlbertSans/AlbertSans-Medium.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'AlbertSans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./fonts/AlbertSans/AlbertSans-SemiBold.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'AlbertSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/AlbertSans/AlbertSans-Regular.ttf') format('opentype');
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f7fa;
+  /* color: var(--foreground);
+  background: var(--background); */
+  font-family: AlbertSans, Arial, Helvetica, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type='radio'] {
+  position: relative;
+}
+
+input[type='radio']:after {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid white;
+}
+
+input[type='radio']:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  z-index: 1;
+}
+
+input[type='radio']:checked:after {
+  background-color: #4e0d80;
+}
+
+input[type='radio']:checked:before {
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  top: 6px;
+  left: 7px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
